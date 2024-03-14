@@ -1,0 +1,26 @@
+a {
+    color: currentColor;
+  }
+  
+  .active {
+    color: #bf216b;
+  }
+
+  .MovieDetails_backBtn__ExI4s {
+    margin-bottom: 5px;
+    border: none;
+    padding: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.39);
+  }
+
+  .Trending,
+  .formSearch {
+    margin-left: 15px;
+  }
+
+  .btnSearch {
+    margin-left: 5px;
+    border: none;
+    padding: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.39);
+  }
