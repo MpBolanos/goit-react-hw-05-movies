@@ -8,6 +8,8 @@ const Movies = () => {
   const { query } = searchParams;
   const location = useLocation();
 
+  const moviesName = searchParams.get('query') ?? '';
+  
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -16,10 +18,15 @@ const Movies = () => {
     form.reset();
   };
 
+  
+
   useEffect(() => {
-    if (!query) return;
+    if (!query) return; 
     getQuery(query).then(setSearchedMovie);
+    
   }, [query]);
+
+ 
 
   return (
     <form className='formSearch' onSubmit={handleSubmit}>
