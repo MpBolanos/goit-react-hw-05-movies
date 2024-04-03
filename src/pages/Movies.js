@@ -8,7 +8,6 @@ const Movies = () => {
   const { query } = searchParams;
   const location = useLocation();
 
-  const moviesName = searchParams.get('query') ?? '';
   
   const handleSubmit = e => {
     e.preventDefault();
