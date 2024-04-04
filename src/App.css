@@ -7,10 +7,14 @@ a {
   }
 
   .MovieDetails_backBtn__ExI4s {
-    margin-bottom: 5px;
+    margin-bottom:5px;
     border: none;
     padding: 5px;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.39);
+  }
+
+  .MovieDetails_details__Ic0ox{
+    margin-top: 5px;
   }
 
   .Trending,
