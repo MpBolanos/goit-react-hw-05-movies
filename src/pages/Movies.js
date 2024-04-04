@@ -8,24 +8,32 @@ const Movies = () => {
   const { query } = searchParams;
   const location = useLocation();
 
-  
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     const newQuery = form.elements.query.value;
-    setSearchParams(newQuery !== '' ? { query: newQuery } : {});
+    if (newQuery !== '') {
+      try {
+        const fetchedMovies = await getQuery(newQuery);
+        setSearchedMovie(fetchedMovies);
+        setSearchParams({ query: newQuery });
+      } catch (error) {
+        console.error('Ha ocurrido un error: ', error);
+      }
+    } else {
+      setSearchParams({});
+      setSearchedMovie([]);
+    }
     form.reset();
   };
 
-  
-
   useEffect(() => {
-    if (!query) return; 
-    getQuery(query).then(setSearchedMovie);
-    
+    if (query) {
+      getQuery(query).then(setSearchedMovie);
+    } else {
+      setSearchedMovie([]);
+    }
   }, [query]);
-
- 
 
   return (
     <form className='formSearch' onSubmit={handleSubmit}>
